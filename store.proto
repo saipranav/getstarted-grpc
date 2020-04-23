@@ -1,0 +1,12 @@
+syntax = "proto3";
+package entity;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = ".;entity";
+
+message entity {
+    int64 id = 1;
+    string name = 2;
+    google.protobuf.Timestamp update = 3;
+}
