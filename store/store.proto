@@ -1,0 +1,25 @@
+syntax = "proto3";
+package entity;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = ".;store";
+
+service store {
+    rpc save(Entity) returns (EntityResponse) {}
+    rpc restore(EntityRequest) returns (EntityResponse) {}
+}
+
+message EntityRequest {
+    int64 id = 1;
+}
+
+message EntityResponse {
+    repeated Entity entity  = 1;
+}
+
+message Entity {
+    int64 id = 1;
+    string name = 2;
+    google.protobuf.Timestamp update = 3;
+}
