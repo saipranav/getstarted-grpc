@@ -15,7 +15,7 @@ message EntityRequest {
 }
 
 message EntityResponse {
-    repeated Entity entity  = 1;
+    Entity entity = 1;
 }
 
 message Entity {
